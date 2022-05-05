@@ -116,7 +116,24 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+
+        if (isBirthday)
+        {
+            speed -= 5;
+        }
+
+        if (speed <= 60)
+        {
+            return 0;
+        }
+
+        if (speed >= 81)
+        {
+            return 2;
+        }
+
+        return 1;
+
     }
 
     /// <summary>
@@ -129,7 +146,18 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+
+        // 2. summa 10-19 ieskaitot, atgriež 20
+        {
+            if (sum >= 10 && sum <= 19)
+            {
+                return 20;
+            }
+            // 3. pārējos gadījumos atgriež summu
+
+            return sum;
+        }
     }
 
     /// <summary>
@@ -145,7 +173,19 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        if (vacation)
+        {
+            if (day == 6 || day == 0)
+            {
+                return "off";
+            }
+            return "10:00";
+        }
+        if (day == 6 || day == 0)
+        {
+            return "10:00";
+        }
+        return "7:00";
     }
 
     /// <summary>
@@ -159,7 +199,26 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        // a vai b =6
+        // a+b = 6
+        // a-b= 6
+        int Sum = a + b;
+        int diff = a - b;
+        int diff2 = b - a;
+
+        if (a == 6 || b == 6)
+        {
+            return true;
+        }
+        if (a + b == 6)
+        {
+            return true;
+        }
+        if (a - b == 6 || b - a == 6)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
