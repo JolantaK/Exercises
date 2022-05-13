@@ -199,12 +199,10 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        // a vai b =6
-        // a+b = 6
-        // a-b= 6
-        int Sum = a + b;
         int diff = a - b;
+        int diffAbs = Math.Abs(diff);
         int diff2 = b - a;
+        int diff2Abs = Math.Abs(diff2);
 
         if (a == 6 || b == 6)
         {
@@ -214,7 +212,7 @@ public class Logic1
         {
             return true;
         }
-        if (a - b == 6 || b - a == 6)
+        if (diffAbs == 6 || diff2Abs == 6)
         {
             return true;
         }
@@ -232,8 +230,19 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
+        if (outsideMode && (n <= 1 || n >= 10))
+
+        {
+            return true;
+        }
+
+        if (!outsideMode && (n >= 1 && n <= 10))
+        {
+            return true;
+        }
+        return false;
     }
+
 
     /// <summary>
     /// We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of
