@@ -271,7 +271,7 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        if (n >= 0 && n % 20 == 1 || n % 20 == 2)
+        if (n % 20 == 1 || n % 20 == 2)
         {
             return true;
         }
@@ -293,7 +293,7 @@ public class Logic1
             return false;
 
         }
-        if (n >= 0 && (n % 3 == 0 || n % 5 == 0))
+        if (n % 3 == 0 || n % 5 == 0)
         {
             return true;
         }
@@ -312,7 +312,11 @@ public class Logic1
     /// </summary>
     public bool Less20(int n)
     {
-        throw new NotImplementedException();
+        if (n % 20 == 18 || n % 20 == 19)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -326,7 +330,11 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
-        throw new NotImplementedException();
+        if( num%10<=2 || (num%10==8 || num%10 ==9))
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
