@@ -330,7 +330,7 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
-        if( num%10<=2 || (num%10==8 || num%10 ==9))
+        if (num % 10 <= 2 || (num % 10 == 8 || num % 10 == 9))
         {
             return true;
         }
@@ -347,7 +347,13 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+
+        if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19))
+        {
+            return 19;
+        }
+        return sum;
     }
 
     /// <summary>
@@ -361,7 +367,15 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        throw new NotImplementedException();
+        if (!isAsleep)
+        {
+            if ((isMorning && isMom) || !isMorning)
+            {
+                return true;
+            }
+
+        }
+        return false;
     }
 
     /// <summary>
@@ -377,7 +391,22 @@ public class Logic1
     /// </summary>
     public int TeaParty(int tea, int candy)
     {
-        throw new NotImplementedException();
+        // ja līdz 5, tad ballīte neizdevusies
+        // ja virs 5, tad good
+        // ja viens 2X lielāks par otru, tad great
+
+        if (tea < 5 || candy < 5)
+        {
+            return 0;
+        }
+
+        if ((tea<=(candy/2)) || (candy <= (tea/2)))
+        {
+            return 2;
+        }
+
+      
+        return 1;
     }
 
     /// <summary>
