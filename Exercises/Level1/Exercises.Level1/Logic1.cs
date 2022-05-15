@@ -400,12 +400,12 @@ public class Logic1
             return 0;
         }
 
-        if ((tea<=(candy/2)) || (candy <= (tea/2)))
+        if ((tea <= (candy / 2)) || (candy <= (tea / 2)))
         {
             return 2;
         }
 
-      
+
         return 1;
     }
 
@@ -420,7 +420,13 @@ public class Logic1
     /// </summary>
     public string FizzString(string str)
     {
-        throw new NotImplementedException();
+        //char newStr = Convert.ToChar(str);
+
+        if (newStr [0] = "f")
+        {
+            return "Fizz";
+        }
+        return "FizzBuzz";
     }
 
     /// <summary>
