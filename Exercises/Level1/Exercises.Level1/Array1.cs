@@ -162,7 +162,7 @@ public class Array1
         // saīsinātais variants būtu šāds:
         // return new int [] { nums[1], nums[2], nums[0]};
 
-       // *** atrisināt šo ar ciklu tādā veidā, ka nebūtu nozīme cik elementu ir masīvā
+        // *** atrisināt šo ar ciklu tādā veidā, ka nebūtu nozīme cik elementu ir masīvā
     }
 
     /// <summary>
@@ -177,11 +177,13 @@ public class Array1
     {
         // izveidot jaunu masīvu un ieliekat vajadzīgās vietās elementus
 
-        int[] result = new int[nums.Length];
+        int[] result = { nums[2], nums[1], nums[0] };
 
-        result[0] = nums[2];
-        result[1] = nums[1];
-        result[2] = nums[0];
+        //int[] result = new int[nums.Length];
+
+        //result[0] = nums[2];
+        //result[1] = nums[1];
+        //result[2] = nums[0];
 
         return result;
     }
@@ -196,7 +198,29 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        // Izgūstam masīva pirmo elementu un saglabājam iekš mainīgā first
+        int first = nums[0];
+
+        // Izgūstam masīva pēdējo elementu un saglabājam iekš mainīgā last
+        int last = nums[nums.Length - 1];
+
+        int biggest = first;
+
+        if (first < last)
+        {
+            biggest = last;
+        }
+
+        // Nomainām katra masīva elementa vērtību uz atrasto lielāko vērtību
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = biggest;
+        }
+
+        // Atgriežam modificēto masīvu
+        return nums;
+
+
     }
 
     /// <summary>
@@ -210,7 +234,20 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        // ja masīvs garums ir 0, tad atgriežam 0
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+        // ja masīvs garums ir 1, tad atgriežam skaitli
+        if (nums.Length == 1)
+        {
+            return nums[0];
+        }
+        // sasummējam pirmos divus indeksus
+
+        return nums[0] + nums[1];
+
     }
 
     /// <summary>
