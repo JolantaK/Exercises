@@ -422,7 +422,7 @@ public class Logic1
     {
         //char newStr = Convert.ToChar(str);
 
-        if (newStr [0] = "f")
+        //if (newStr [0] = "f")
         {
             return "Fizz";
         }

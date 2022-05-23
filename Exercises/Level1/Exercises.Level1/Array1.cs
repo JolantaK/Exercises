@@ -19,7 +19,23 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+        // izgūstam pirmo elementu
+        int first = nums[0];
+
+        // izgūstam pēdējo elementu
+        int last = nums[nums.Length - 1];
+
+        // atgriežam vērtību True, ja kaut viens ir vienāds ar 6. Garais variants:
+        //if (last == 6 || first == 6)
+        //{
+        //    return true;
+        //}
+        //return false;
+
+        // saīsinātais
+        return last == 6 || first == 6;
+
+
     }
 
     /// <summary>
@@ -32,7 +48,20 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        // ja masīvs ir īsāks par 1, tad atgriežam false
+        if (nums.Length == 0)
+        {
+            return false;
+        }
+        // izgūstam pirmo un pēdejo elementu
+        int first = nums[0];
+        int last = nums[nums.Length - 1];
+
+        //salīdzinām vai elementi ir vienādi
+        return first == last;
+
+        // otro un trešo punktu var saīsināt un apvienot,  jo mainīgie parādās tikai 2 vietās izskatās šadi:
+        // return nums[0] == nums[nums.Length - 1];
     }
 
     /// <summary>
@@ -42,7 +71,11 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+        int[] pi = { 3, 1, 4 };
+        return pi;
+
+        // saīsinātais variants būtu šāds:
+        // return new int[] {3,1,4};
     }
 
     /// <summary>
@@ -55,7 +88,31 @@ public class Array1
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        // izgūstam abu masīvu pirmos elementus un salīdzinām. ja vienādi atgriežam true
+        int startA = a[0];
+        int startB = b[0];
+
+        if (startA == startB)
+        {
+            return true;
+        }
+        // izgūstam abu masīvu pēdējos elementus un salīdzinām. ja vienādi atgriežam true
+
+        int endA = a[a.Length - 1];
+        int endB = b[b.Length - 1];
+
+        if (endA == endB)
+        {
+            return true;
+        }
+        // citādi atgriežam false
+
+        return false;
+
+        // saīsinot būtu šādi:
+
+        // return a[0] == b[0] || a[a.Length - 1] == b[b.Length - 1]
+
     }
 
     /// <summary>
@@ -67,7 +124,19 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        //piedefinējam mainīgo kurā glabāsim summas vērtību
+
+        int sum = 0;
+
+        foreach (var item in nums)
+        {
+            //izmantojot ciklu ejam cauri katram masīva elementam un pieskaitām summai
+
+            sum += item;
+        }
+
+        //atgriežam summas mainīgo
+        return sum;
     }
 
     /// <summary>
@@ -80,7 +149,20 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
-        throw new NotImplementedException();
+        // izveidot jaunu masīvu un ieliekat vajadzīgās vietās elementus
+
+        int[] result = new int[nums.Length];
+
+        result[0] = nums[1];
+        result[1] = nums[2];
+        result[2] = nums[0];
+
+        return result;
+
+        // saīsinātais variants būtu šāds:
+        // return new int [] { nums[1], nums[2], nums[0]};
+
+       // *** atrisināt šo ar ciklu tādā veidā, ka nebūtu nozīme cik elementu ir masīvā
     }
 
     /// <summary>
@@ -93,7 +175,15 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        // izveidot jaunu masīvu un ieliekat vajadzīgās vietās elementus
+
+        int[] result = new int[nums.Length];
+
+        result[0] = nums[2];
+        result[1] = nums[1];
+        result[2] = nums[0];
+
+        return result;
     }
 
     /// <summary>
