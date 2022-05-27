@@ -260,7 +260,10 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+      
+        int[] result = { a[1], b[1] };
+
+        return result;
     }
 
     /// <summary>
@@ -273,7 +276,15 @@ public class Array1
     /// </summary>
     public int[] MakeEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        // izgūstam pirmo elementu
+        int first = nums[0];
+
+        // izgūstam pēdējo elementu
+        int last = nums[nums.Length - 1];
+
+        int [] result = { first, last };
+
+        return result;
     }
 
     /// <summary>
