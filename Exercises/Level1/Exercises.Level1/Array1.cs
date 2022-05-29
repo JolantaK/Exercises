@@ -260,7 +260,7 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-      
+
         int[] result = { a[1], b[1] };
 
         return result;
@@ -282,7 +282,7 @@ public class Array1
         // izgūstam pēdējo elementu
         int last = nums[nums.Length - 1];
 
-        int [] result = { first, last };
+        int[] result = { first, last };
 
         return result;
     }
@@ -296,7 +296,12 @@ public class Array1
     /// </summary>
     public bool Has23(int[] nums)
     {
-        throw new NotImplementedException();
+
+        if (nums[0] == 2 || nums[1] == 2 || nums[0] == 3 || nums[1] == 3)
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -308,7 +313,15 @@ public class Array1
     /// </summary>
     public bool No23(int[] nums)
     {
-        throw new NotImplementedException();
+        {
+
+            if ((nums[0] != 2 && nums[0] != 3) && (nums[1] != 2 && nums[1] != 3))
+            {
+                return true;
+            }
+            return false;
+           
+        }
     }
 
     /// <summary>
